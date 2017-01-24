@@ -36,9 +36,12 @@ $$
 - Non-Uniform Distribution
 The entropy of Non-Uniform Distribution  becomes smaller than the entropy of uniform distribution, because probability of some events in Non-Uniform Distribution  are larger than the others. In other words, some events  are more predictable than the other states. 
 
-- low entropy distribution
-normal distribution? when variance is not laege number (less than 0.5??)
+- high and low  entropy distribution
+Suppose that we have a normal distribution, the form of entropy is $\frac{1}{2} ln(2\sigma^{2} \pi e)$. If $\signma = 5$, then the entropy become high, because the shape of the distribution become flat and it is difficult to predict events.
+On the other hands, if $\sigma = 0.2$, then the entropy become low, because events around X=0 happen frequently and it is easy to predict it. 
 
-- high entropy distribution
-exponential distribution
+##Assignment 3
+
+
+
 
