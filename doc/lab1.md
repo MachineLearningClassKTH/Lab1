@@ -1,6 +1,6 @@
 # Lab1 -Decision Tree
 
-##Information
+##General Information
 MONK-3 has 5% noise in a training data
 
 - MONK-1\\
@@ -34,7 +34,7 @@ Entropy(S) = - \Sigma_{n=1}^{N} P(X=x_{n}) log_{2}P(x=x_{n}) = - \Sigma_{n=1}^{N
 $$
 
 - Non-Uniform Distribution
-The entropy becomes smaller than uniform distribution, because probability of some events are larger than the others. In other words, some events  are more predictable than the other states. 
+The entropy of Non-Uniform Distribution  becomes smaller than the entropy of uniform distribution, because probability of some events in Non-Uniform Distribution  are larger than the others. In other words, some events  are more predictable than the other states. 
 
 - low entropy distribution
 normal distribution? when variance is not laege number (less than 0.5??)
