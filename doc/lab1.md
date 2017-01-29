@@ -46,7 +46,7 @@ The entropy of Non-Uniform Distribution gets smaler than the entropy of uniform 
 Suppose that we have a normal distribution, the form of entropy is $\frac{1}{2} ln(2\sigma^{2} \pi e)$. When $\sigma = 5$, the entropy gets large, because the shape of the distribution become flat and it is difficult to predict what events more likely happen.
 On the other hands, when $\sigma = 0.2$, the entropy gets low, because events around the center of distribution happen more frequently than the others.
 
-##Assignment 3
+## Assignment 3
 --- Expected Information gain
 Monk1
 0.07527255560831925
@@ -74,5 +74,25 @@ Monk3
 0.25591172461972755
 0.007077026074097326
 
-## Assignment 4
+## Assignment4
+The entropy implies the measure of uncertainty or unpredictability, i.e the larger the entropy is, the more uncertain an attribute had. So the maximized infomation gain is derived from the most certain attribute(the largest entropy). 
+Then, to create an efficient decision tree we select the attribute that result in the most pure subset.
+
+## Assignment5 
+
+#### Monk-1
+train: 1.0
+test: 0.8287037037037037
+
+#### Monk-2
+train: 1.0
+test: 0.6921296296296297
+
+#### Monk-3
+train: 1.0
+test: 0.9444444444444444
+
+We assume that the result of Monk-3 is not correct, since the result is the most accurate regardless having 5% additional noise.
+(we had better think about this result later)
+
 
