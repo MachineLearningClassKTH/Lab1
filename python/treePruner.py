@@ -1,6 +1,8 @@
 import monkdata as m
 import dtree as d
 import random
+import matplotlib
+import matplotlib.pyplot as plt
 import numpy as np
 from  drawtree_qt5 import *
 
@@ -33,3 +35,16 @@ def getMeanError(data,datatest, fraction, times):
         prunedTree = prune(data,fraction);
         errorList.append(d.check(prunedTree,datatest))
     return np.mean(errorList)
+
+def printGraph(fractions, dataset, dataset_test, mean_times):
+    result = []
+    for x in fractions:
+        error = getMeanError(dataset, dataset_test, x, mean_times);
+        result.append(error)
+        print("Test for fraction ", x, ": ", error)
+
+    plt.plot(fractions, result)
+    plt.xlabel("fractions")
+    plt.ylabel("fit(%)")
+    plt.savefig("../plots/assignment7_monk3.png")
+    print("Saved to ../plots/assignment7_monk3.png")
