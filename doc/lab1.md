@@ -32,7 +32,7 @@ monk-3: 0.9998061328047111
 - Uniform Distribution
 
 A uniform distribution makes the entropy maximize, because corresponding vriables have the constant probability and it's hard to predict an event.
-Suppose that we have $P(X=x_{n}) = frac{1}{N}$ where X takes the value  $X=[x_{1}, x{2},....,x_{N}]$(N={1.....}).
+Suppose that we have $P(X=x_{n}) = \frac{1}{N}$ where X takes the value  $X=[x_{1}, x{2},....,x_{N}]$(N={1.....}).
 Then, the entropy is
 
 $$
@@ -47,31 +47,49 @@ Suppose that we have a normal distribution, the form of entropy is $\frac{1}{2} 
 On the other hands, when $\sigma = 0.2$, the entropy gets low, because events around the center of distribution happen more frequently than the others.
 
 ## Assignment 3
---- Expected Information gain
-Monk1
+## Expected Information gain
+
+- Monk1
+
 0.07527255560831925
+
 0.005838429962909286
-0.00470756661729721
+
+0.00470756661729721 
+
 0.02631169650768228
+
 0.28703074971578435
+
 0.0007578557158638421
 
-
-Monk2
+- Monk2
+ 
 0.0037561773775118823
+
 0.0024584986660830532
+
 0.0010561477158920196
+
 0.015664247292643818
+
 0.01727717693791797
+
 0.006247622236881467
 
 
-Monk3
+- Monk3
+
 0.007120868396071844
+
 0.29373617350838865
+
 0.0008311140445336207
+
 0.002891817288654397
+
 0.25591172461972755
+
 0.007077026074097326
 
 ## Assignment4
@@ -82,14 +100,17 @@ Then, to create an efficient decision tree we select the attribute that result i
 
 #### Monk-1
 train: 1.0
+
 test: 0.8287037037037037
 
 #### Monk-2
 train: 1.0
+
 test: 0.6921296296296297
 
 #### Monk-3
 train: 1.0
+
 test: 0.9444444444444444
 
 We assume that the result of Monk-3 is not correct, since the result is the most accurate regardless having 5% additional noise.
