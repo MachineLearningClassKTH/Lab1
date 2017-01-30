@@ -6,6 +6,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from  drawtree_qt5 import *
 
+#plot settings
+plt.style.use("ggplot")
+params = {"legend.fontsize": 6}
+plt.rcParams.update(params)
+
 def partition(data, fraction):
     ldata = list(data)
     random.shuffle(ldata)
@@ -29,22 +34,42 @@ def prune(data, fraction):
             break;
     return current
 
-def getMeanError(data,datatest, fraction, times):
+def getMeasure(data,datatest, fraction, times):
     errorList = []
     for i in range(0, times-1):
         prunedTree = prune(data,fraction);
         errorList.append(d.check(prunedTree,datatest))
-    return np.mean(errorList)
+    return np.mean(errorList), np.var(errorList)
 
-def printGraph(fractions, dataset, dataset_test, mean_times):
-    result = []
+def calculateFitness(fractions, dataset, dataset_test, iteration, dataFlag):
+    resultMean = []
+    resultVar = []
     for x in fractions:
-        error = getMeanError(dataset, dataset_test, x, mean_times);
-        result.append(error)
-        print("Test for fraction ", x, ": ", error)
+        mean, var = getMeasure(dataset, dataset_test, x, iteration);
+        resultMean.append(mean)
+        resultVar.append(var)
+        print("Test for fraction ", x, ": ", mean)
+        print("variance", var)
 
-    plt.plot(fractions, result)
+    #save data
+    print('Saved to ../data/monk{}_mean.txt'.format(dataFlag));
+    np.savetxt('../data/monk{}_mean.txt'.format(dataFlag), resultMean)
+    print('Saved to ../data/monk{}_var.txt\n'.format(dataFlag));
+    np.savetxt('../data/monk{}_var.txt'.format(dataFlag), resultVar)
+    return resultMean, resultVar
+
+def plotData(results, fractions):
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    for i in range(0, len(results)):
+        plt.plot(fractions, results[i], label="monk{}".format(i+1))
+
+        for xy in zip(fractions, results[i]):
+            ax.annotate('(%s, %s)' % xy, xy=xy, textcoords='data')
     plt.xlabel("fractions")
     plt.ylabel("fit(%)")
-    plt.savefig("../plots/assignment7_monk3.png")
-    print("Saved to ../plots/assignment7_monk3.png")
+    plt.ylim((0.4, 1.0))
+    plt.legend(fontsize=12)
+    plt.savefig("../plots/assignment7.png")
+    print("Saved to ../plots/assignment7.png")
+
