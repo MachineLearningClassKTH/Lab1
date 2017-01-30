@@ -9,26 +9,25 @@ def partition(data, fraction):
     breakPoint = int(len(ldata) * fraction)
     return ldata[:breakPoint], ldata[breakPoint:]
 
-monk1train, monk1val = partition(m.monk2, 0.6)
 
+def prune(data, fraction):
 
-t1 = d.buildTree(monk1train, m.attributes);
+    monk1train, monk1val = partition(data, fraction)
+    t1 = d.buildTree(monk1train, m.attributes);
+    current = t1;
+    errorVal = 0;
+    while (True):
+        old = current;
+        listOfSubs = d.allPruned(current);
+        for x in listOfSubs:
+            if errorVal <= d.check(x, monk1val):
+                errorVal = d.check(x, monk1val);
+                current = x
+        if (old == current):
+            break;
+    return current
 
-
-current = t1;
-errorVal = 0;
-
-while (True):
-    old = current;
-    listOfSubs = d.allPruned(current);
-    for x in listOfSubs:
-        if errorVal <= d.check(x, monk1val):
-            errorVal = d.check(x, monk1val);
-            current = x
-    if (old == current):
-        break;
-
-
-
-print("Validation: ", d.check(current, monk1val))
-print("Test: ", d.check(current, m.monk2test))
+fractions = [0.3,0.4,0.5,0.6,0.7,0.8]
+for x in fractions:
+    prunedTree = prune(m.monk3,x);
+    print("Test for fraction ", x, ": ", d.check(prunedTree, m.monk3test))
