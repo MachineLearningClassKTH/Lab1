@@ -63,8 +63,8 @@ def plotData(results, fractions):
     ax = fig.add_subplot(111)
     for i in range(0, len(results)):
         plt.plot(fractions, results[i], label="monk{}".format(i+1))
-
-        for xy in zip(fractions, results[i]):
+        roundedResult = ['%.2f' % ele for ele in results[i]]
+        for xy in zip(fractions, roundedResult):
             ax.annotate('(%s, %s)' % xy, xy=xy, textcoords='data')
     plt.xlabel("fractions")
     plt.ylabel("fit(%)")
