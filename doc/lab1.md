@@ -17,7 +17,7 @@ $(a_{i}=1$ , for exactly two $i=${$1..6$}
 
 $((a5=1) \wedge (a4=1))\vee((a5 \neq 4) \wedge (a2 \neq 3))$
 
-## Assignment0
+## Assignment 0
 
 ### Monk-2
 True Concept:
@@ -27,7 +27,7 @@ Since we have 2 distinct attributes from 6 that must take the same value, and no
 
 \newpage
 
-##Assignment1
+##Assignment 1
 
 The entropy for the datasets are as follows:
 
@@ -37,7 +37,7 @@ The entropy for the datasets are as follows:
 |monk-2   | 0.9571  |
 |monk-3   | 0.9998  |
 
-##Assignment2
+##Assignment 2
 
 ### Uniform Distribution
 
@@ -58,7 +58,7 @@ On the other hands, when $\sigma = 0.2$, the entropy gets low, because events ar
 
 ## Assignment 3
 
-Since we want to maximize information gain for each step, we choose the next node attribute by estimating which attribute maximizes the gain for that node.
+Since we want to maximize information gain for each step, we choose the next node splitting attribute by estimating which attribute maximizes the gain for that node.
 In our case, for Monk1 it would be __A5__, Monk2 __A5__ and for Monk3 __A2__.
 
 ### Expected Information gain
@@ -68,26 +68,26 @@ In our case, for Monk1 it would be __A5__, Monk2 __A5__ and for Monk3 __A2__.
 |Monk2|0.00375|0.00245|0.00105|0.01566|0.01727|0.00624|
 |Monk3|0.00712|0.29373|0.00083|0.00289|0.25591|0.00707|
 
-## Assignment4
-The entropy implies the measure of uncertainty or unpredictability, i.e the larger the entropy is, the more uncertain an attribute had. So the maximized infomation gain is derived from the most certain attribute(the largest entropy).
-Then, to create an efficient decision tree we select the attribute that result in the most pure subset.
+## Assignment 4
+The entropy implies the measure of uncertainty or unpredictability, i.e the larger the entropy is, the more uncertain an attribute has. So the maximized information gain is derived from the most certain attribute(the smallest entropy). Meaning that for the subset $S_{k}$ the entropy should be minimized.
+Therefore, to create an efficient decision tree we should prune from the attribute that would result in the most pure subset. Since
 
-## Assignment5
+## Assignment 5
+|Dataset|$E_{train}$|$E_{test}$|
+|-|-|-|
+|Monk-1| 1.0000| 0.8287|
+|Monk-2| 1.0000| 0.6921|
+|Monk-3| 1.0000| 0.9444|
 
-#### Monk-1
-train: 1.0
+It seems as if the classification of dataset Monk2 was the hardest, which matches our assumptions from assignment 0. It makes sense that the training data is getting a better precision since they are what the decision trees are built upon. While it is possible that the decision trees have been overfitted to some extent, that will be seen more accurately when compared to pruned trees. The difference between the train and test datasets can be explained with how good of an example of real cases that the training data is.
 
-test: 0.8287037037037037
+## Assignment 6
 
-#### Monk-2
-train: 1.0
+## Assignment 7
 
-test: 0.6921296296296297
+|Dataset|$E_{pruned}$|$E_{non-pruned}$|
+|-|-|-|
+|Monk-1| 1.0000| 0.8287|
+|Monk-3| 1.0000| 0.9444|
 
-#### Monk-3
-train: 1.0
-
-test: 0.9444444444444444
-
-We assume that the result of Monk-3 is not correct, since the result is the most accurate regardless having 5% additional noise.
-(we had better think about this result later)
+![optional image description](../plots/)
