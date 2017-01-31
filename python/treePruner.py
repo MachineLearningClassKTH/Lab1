@@ -69,6 +69,7 @@ def plotData(results, fractions):
     plt.xlabel("fractions")
     plt.ylabel("fit(%)")
     plt.ylim((0.4, 1.0))
+    plt.xlim((0.3, 0.8))
     plt.legend(fontsize=12)
     plt.savefig("../plots/assignment7.png")
     print("Saved to ../plots/assignment7.png")

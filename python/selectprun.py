@@ -14,10 +14,10 @@ iteration = 100
 fractions = [0.3,0.4,0.5,0.6,0.7,0.8]
 
 meanMonk1, varMonk1 = calculateFitness(fractions, m.monk1, m.monk1test, iteration, 1)
-meanMonk2, varMonk2 = calculateFitness(fractions, m.monk2, m.monk2test, iteration, 2)
+meanMonk3, varMonk3 = calculateFitness(fractions, m.monk3, m.monk3test, iteration, 3)
 
 #plotData
-results = np.array([meanMonk1, meanMonk2])
+results = np.array([meanMonk1, meanMonk3])
 plotData(results, fractions)
 
 
