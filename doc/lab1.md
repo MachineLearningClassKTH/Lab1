@@ -80,16 +80,19 @@ Therefore, to create an efficient decision tree we should prune from the attribu
 |Monk-3| 1.0000| 0.9444|
 
 It seems as if the classification of dataset Monk2 was the hardest, which matches our assumptions from assignment 0. It makes sense that the training data is getting a better precision since they are what the decision trees are built upon. While it is possible that the decision trees have been overfitted to some extent, that will be seen more accurately when compared to pruned trees. The difference between the train and test datasets can be explained with how good of an example of real cases that the training data is.
+\newpage
 
 ## Assignment 6
-The variance in decision tree depends on the depth of decision tree, and is controlled by pruning. The decision tree before pruning has high variance and would be overfitted, so we should prune the decision tree in order to decrease the variance and increase the bias.
+The variance in decision trees depends on the depth of decision tree, and is controlled with pruning. The decision tree before pruning has high variance and if pruning gives better results, would be overfitted. So we should always try to prune the decision tree in order to decrease the variance and increase the bias, as the chances of getting worse results are low.
+
+![Pruning the decision tree](pruning.jpg)
 
 
 ## Assignment 7
 
-We iterated the computation of the classification error for each the parameter fraction 100 times, then calculated the mean and variance of those value. 
+We iterated the computation of the classification error for each the parameter fraction 100 times, then calculated the mean error and variance from those values. This was done to lessen the impact of single bad training runs.
 
-As for Monk-1 the fitness is maximum value when we split the training data into 0.6 training data and 0.4 validation data and Monk-2 when spliting the training data into 0.7 training data and 0.3 validation data.
+As for Monk-1 the fitness achieves a maximum fitness value when we split the training data into 0.6 training data and 0.4 validation data and for Monk-2 when splitting the training data into 0.7 training data and 0.3 validation data.
 
 According to the variance of both datasets, the changes of Monk-3 training datasets is more effective than the changes of Monk-1. Moreover Monk-3 dataset is more flexible to interpret the test data.(because Monk-3 has 5% additional noise, the variance would be bigger and test data is interpreted more flexibly)
 
@@ -99,4 +102,3 @@ According to the variance of both datasets, the changes of Monk-3 training datas
 |Monk-3| 0.0335| 0.0556|0.0007|
 
 ![The classification error for each fraction](../plots/assignment7.png)
-
