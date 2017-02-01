@@ -82,7 +82,7 @@ Therefore, to create an efficient decision tree we should prune from the attribu
 It seems as if the classification of dataset Monk2 was the hardest, which matches our assumptions from assignment 0. It makes sense that the training data is getting a better precision since they are what the decision trees are built upon. While it is possible that the decision trees have been overfitted to some extent, that will be seen more accurately when compared to pruned trees. The difference between the train and test datasets can be explained with how good of an example of real cases that the training data is.
 
 ## Assignment 6
-Mainly, the variance in decision tree depends on the depth of decision tree, and is controlled by pruning. If the variance increase, the error(bias) would increase. In this case we controlled the error, therefore the variance would increase.
+The variance in decision tree depends on the depth of decision tree, and is controlled by pruning. The decision tree before pruning has high variance and would be overfitted, so we should prune the decision tree in order to decrease the variance and make the bias larger when learning from the training data.
 
 
 ## Assignment 7
@@ -99,3 +99,4 @@ According to the variance of both datasets, the changes of Monk-3 training datas
 |Monk-3| 0.9708| 0.9444|0.0057|
 
 ![The classification error for each fraction](../plots/assignment7.png)
+
