@@ -82,7 +82,7 @@ Therefore, to create an efficient decision tree we should prune from the attribu
 It seems as if the classification of dataset Monk2 was the hardest, which matches our assumptions from assignment 0. It makes sense that the training data is getting a better precision since they are what the decision trees are built upon. While it is possible that the decision trees have been overfitted to some extent, that will be seen more accurately when compared to pruned trees. The difference between the train and test datasets can be explained with how good of an example of real cases that the training data is.
 
 ## Assignment 6
-Mainly, the variance in decision tree depends on the depth of decision tree, and is controlled by pruning. Therefore, pruning is to make the variance more smaller and make the bias more larger with less flexibility.(decision tree has high flexibility)
+Mainly, the variance in decision tree depends on the depth of decision tree, and is controlled by pruning. If the variance increase, the error(bias) would increase. In this case we controlled the error, therefore the variance would increase.
 
 
 ## Assignment 7
@@ -91,8 +91,7 @@ We iterated the computation of the classification error for each the parameter f
 
 As for Monk-1 the fitness is maximum value when we split the training data into 0.6 training data and 0.4 validation data and Monk-2 when spliting the training data into 0.7 training data and 0.3 validation data.
 
-According to the variance of both datasets, the changes of Monk-3 training datasets is more effective than the changes of Monk-1. Moreover Monk-3 dataset is more flexible to interpret the test data.
-
+According to the variance of both datasets, the changes of Monk-3 training datasets is more effective than the changes of Monk-1. Moreover Monk-3 dataset is more flexible to interpret the test data.(because Monk-3 has 5% additional noise, the variance would be bigger and test data is interpreted more flexibly)
 
 |Dataset|$E_{pruned}$|$E_{non-pruned}$|variance|
 |-|-|-|-|
