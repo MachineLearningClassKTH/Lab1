@@ -46,9 +46,9 @@ def calculateFitness(fractions, dataset, dataset_test, iteration, dataFlag):
     resultVar = []
     for x in fractions:
         mean, var = getMeasure(dataset, dataset_test, x, iteration);
-        resultMean.append(mean)
+        resultMean.append(1 - mean)
         resultVar.append(var)
-        print("Test for fraction ", x, ": ", mean)
+        print("Test for fraction ", x, ": ", 1 - mean)
         print("variance", var)
 
     #save data
@@ -68,7 +68,7 @@ def plotData(results, fractions):
             ax.annotate('(%s, %s)' % xy, xy=xy, textcoords='data')
     plt.xlabel("fractions")
     plt.ylabel("fit(%)")
-    plt.ylim((0.4, 1.0))
+    #plt.ylim((0.0, 0.6))
     plt.xlim((0.3, 0.8))
     plt.legend(fontsize=12)
     plt.savefig("../plots/assignment7.png")

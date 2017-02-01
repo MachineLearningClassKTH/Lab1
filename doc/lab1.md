@@ -95,8 +95,8 @@ According to the variance of both datasets, the changes of Monk-3 training datas
 
 |Dataset|$E_{pruned}$|$E_{non-pruned}$|variance|
 |-|-|-|-|
-|Monk-1| 0.8012| 0.8287|0.0017|
-|Monk-3| 0.9708| 0.9444|0.0057|
+|Monk-1| 0.1989| 0.1713|0.0015|
+|Monk-3| 0.0335| 0.0556|0.0007|
 
 ![The classification error for each fraction](../plots/assignment7.png)
 
